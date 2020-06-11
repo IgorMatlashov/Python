@@ -14,5 +14,3 @@ while start < finish:
     start = start + (start / 100 * 10)
     day += 1
 print(f'{day} days: {start:.2f}, need for your purpose')
-
-
