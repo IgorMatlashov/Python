@@ -15,8 +15,8 @@ class Road:
         self.length = _length
         self.width = _width
         self.weigth = 25
-        self.thickness = 0.05
-        result = (self.length * self.width * self.weigth * self.thickness) / 10
+        self.thickness = 0.01
+        result = (self.length * self.width * self.weigth * self.thickness) / 1000
         print(f'Need {result} ton for build track')
 
 
