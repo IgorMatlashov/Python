@@ -14,8 +14,7 @@ class Num2:
 
 class Num3(Num1, Num2):
     def __init__(self, a, b):
-        Num1.__init__(self, a)
-        Num2.__init__(self, b)
+        super().__init__(a, b)
 
     def draw(self):
         print(f'Pencil {self.a}, {self.b}')
