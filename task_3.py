@@ -31,10 +31,7 @@ try:
                 continue
             if answer == 'no':
                 print(f'Your list:\n{my_list}')
-
                 break
-            if answer == 'yes' or 'no':
-                pass
             raise Value('You Entered no answer!')
         my_list.append(n)
         print(my_list)
