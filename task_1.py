@@ -5,7 +5,7 @@
 # Второй, с декоратором @staticmethod, должен проводить валидацию числа, месяца и года (например, месяц — от 1 до 12).
 # Проверить работу полученной структуры на реальных данных.
 
-class Data:
+classclass Data:
     def __init__(self, data):
         self.data = data
 
@@ -19,17 +19,19 @@ class Data:
 
     @staticmethod
     def validation(my_data):
-        if 1 <= my_data[0] <= 31:
-            if 1 <= my_data[1] <= 12:
-                if my_data[2] < 0:
-                    return f'BC'
+        try:
+            if 1 <= my_data[0] <= 31:
+                if 1 <= my_data[1] <= 12:
+                    if my_data[2] < 0:
+                        return f'BC'
+                    else:
+                        return 'If this date is your birthday, then Happy holiday!:)'
                 else:
-                    return 'If this date is your birthday, then Happy holiday!:)'
+                    return f'Wrong month'
             else:
-                return f'Wrong month'
-        else:
-            return f'Wrong day'
-
+                return f'Wrong day'
+        except IndexError:
+            return f'Wrong date'
 
     def __str__(self):
         result = Data.validation(Data.get_data(self.data))
