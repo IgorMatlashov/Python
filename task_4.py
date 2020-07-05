@@ -11,8 +11,9 @@ class Stock:
     department_copier = []
     dict_data = {}
 
+
 class Equipment:
-    def __init__(self, name, model, price, count = 1):
+    def __init__(self, name, model, price, count=1):
         self.name = name
         self.model = model
         self.count = count
@@ -21,29 +22,36 @@ class Equipment:
     def __str__(self):
         return f"{self.name} {self.model} left {self.count} by price {self.price}"
 
+
 class Printer(Equipment):
     printer_count = 0
-    def __init__(self, name, model, price, count = 1):
+
+    def __init__(self, name, model, price, count=1):
         super().__init__(name, model, price, count)
         self.data = f'{name}, {model}, {price}, {count}'
         self.printer_count += 1
         self.list_char = []
 
+
 class Copier(Equipment):
     copier_count = 0
-    def __init__(self, name, model, price, count = 1):
+
+    def __init__(self, name, model, price, count=1):
         super().__init__(name, model, price, count)
         self.data = f'{name}, {model}, {price}, {count}'
         self.copier_count += 1
         self.list_char = []
 
+
 class Scanner(Equipment):
     scanner_count = 0
-    def __init__(self, name, model, price, count = 1):
+
+    def __init__(self, name, model, price, count=1):
         super().__init__(name, model, price, count)
         self.data = f'{name}, {model}, {price}, {count}'
         self.scanner_count += 1
         self.list_char = []
+
 
 s = Stock()
 
@@ -78,7 +86,7 @@ while True:
                     break
                 else:
                     printer.list_char.append(char)
-                    s.department_printer.append(s.dict_data.fromkeys([printer.data],char))
+                    s.department_printer.append(s.dict_data.fromkeys([printer.data], char))
     elif answer == 'department scanner' or 'scanner' or '2':
         print(s.department_scanner)
         add_or_with = input('Do you want to add or leave?\n'
@@ -103,7 +111,7 @@ while True:
                     break
                 else:
                     scanner.list_char.append(char)
-                    s.department_scanner.append(s.dict_data.fromkeys([scanner.data],char))
+                    s.department_scanner.append(s.dict_data.fromkeys([scanner.data], char))
 
     elif answer == 'department copier' or 'copier' or '3':
         print(s.department_copier)
@@ -129,4 +137,4 @@ while True:
                     break
                 else:
                     copier.list_char.append(char)
-                    s.department_copier.append(s.dict_data.fromkeys([copier.data],char))
+                    s.department_copier.append(s.dict_data.fromkeys([copier.data], char))
